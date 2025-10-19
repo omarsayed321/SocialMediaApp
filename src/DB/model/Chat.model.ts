@@ -46,7 +46,7 @@ const ChatSchema = new Schema<IChat>(
     roomId: {
       type: String,
       required: function () {
-        return this.roomId;
+        return this.createdBy ? true : false;
       },
     },
     messages: [messageSchema],
